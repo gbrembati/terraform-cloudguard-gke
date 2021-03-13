@@ -3,8 +3,8 @@ This Terraform project is intended to be used to onboard multiple Public Cloud a
 What it does is configuring through API (with **Terraform**) an existing CloudGuard CSPM Portal.      
  
 ## Do you want to see more? 
-Check out my Microsoft Azure repository here: [gbrembati / MicrosoftAzure](https://github.com/gbrembati/terraform-azure)   
-Check out my Google Cloud Platform repository here: [gbrembati / GoogleCloudPlatform](https://github.com/gbrembati/terraform-gcp)    
+Check out my Microsoft Azure repository here: [gbrembati / terraform-azure](https://github.com/gbrembati/terraform-azure)   
+Check out my Google Cloud Platform repository here: [gbrembati / terraform-gcp](https://github.com/gbrembati/terraform-gcp)    
    
 Check the Check Point official CloudGuard IaaS repository here: [CheckPointSW / CloudGuardIaaS](https://github.com/CheckPointSW/CloudGuardIaaS)
 
