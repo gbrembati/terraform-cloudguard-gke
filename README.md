@@ -9,7 +9,7 @@ Check out my Google Cloud Platform repository here: [gbrembati / terraform-gcp](
 Check the Check Point official CloudGuard IaaS repository here: [CheckPointSW / CloudGuardIaaS](https://github.com/CheckPointSW/CloudGuardIaaS)
 
 ## How to start?
-As first you will need to have a CloudGuard CSPM account, if you dont have it, you can create one with this links:
+First, you need to have a CloudGuard CSPM account, if you don't, you can create one with these links:
 1. Create an account in [Europe Region](https://secure.eu1.dome9.com/v2/register/invite)
 2. Create an account in [Asia Pacific Region](https://secure.ap1.dome9.com/v2/register/invite)
 3. Create an account in [United States Region](https://secure.dome9.com/v2/register/invite)
