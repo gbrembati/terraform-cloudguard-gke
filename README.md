@@ -2,6 +2,12 @@
 This Terraform project is intended to be used to onboard multiple Public Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot.     
 What it does is configuring through API (with **Terraform**) an existing CloudGuard CSPM Portal.      
  
+## Do you want to see more? 
+Check out my Microsoft Azure repository here: [gbrembati / MicrosoftAzure](https://github.com/gbrembati/terraform-azure)   
+Check out my Google Cloud Platform repository here: [gbrembati / GoogleCloudPlatform](https://github.com/gbrembati/terraform-gcp)    
+   
+Check the Check Point official CloudGuard IaaS repository here: [CheckPointSW / CloudGuardIaaS](https://github.com/CheckPointSW/CloudGuardIaaS)
+
 ## How to start?
 As first you will need to have a CloudGuard CSPM account, if you dont have it, you can create one with this links:
 1. Create an account in [Europe Region](https://secure.eu1.dome9.com/v2/register/invite)
