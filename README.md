@@ -1,4 +1,4 @@
-# Check Point CPSM Configuration
+# Check Point CSPM Configuration
 This Terraform project is intended to be used to onboard multiple Public Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot.     
 What it does is configuring through API (with **Terraform**) an existing CloudGuard CSPM Portal.      
  
@@ -15,7 +15,7 @@ First, you need to have a CloudGuard CSPM account, if you don't, you can create 
 2. Create an account in [Asia Pacific Region](https://secure.ap1.dome9.com/v2/register/invite)
 3. Create an account in [United States Region](https://secure.dome9.com/v2/register/invite)
 
-## Get API credentials in your CPSM Portal
+## Get API credentials in your CSPM Portal
 Then you will need to get the API credentials that you will be using with Terraform to onboard the accounts.
 
 ![Architectural Design](/zimages/create-cpsm-api.jpg)
