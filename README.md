@@ -12,7 +12,7 @@ Check out my Terraform Microsoft Azure repository here: [gbrembati / terraform-a
 Check out my Terraform Amazon Web Services repository here: [gbrembati / terraform-aws](https://github.com/gbrembati/terraform-aws)   
 Check out my Terraform Google Cloud Platform repository here: [gbrembati / terraform-gcp](https://github.com/gbrembati/terraform-gcp)    
    
-Check the Check Point official CloudGuard CSPM repository here: [dome9 / terraform-provider-dome9](https://github.com/dome9/terraform-provider-dome9/tree/master/examples)
+Check the Check Point official CloudGuard CSPM repository here: [dome9 / terraform-provider-dome9 / examples](https://github.com/dome9/terraform-provider-dome9/tree/master/examples)
 
 
 ## How do you use these projects?
@@ -41,5 +41,5 @@ To destroy the Terraform-managed infrastructure, run:
 terraform destroy
 ```
 
-If you want (or need) to further customize other project details, you can change defaults in the different __*name-variables.tf*__ files.   
+If you want (or need) to further customize other project details, you can change defaults in the different __*name-variables.tf*__ files.
 Here you will also able to find the descriptions that explains what each variable is used for.
