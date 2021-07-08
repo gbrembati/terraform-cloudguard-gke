@@ -4,8 +4,8 @@ This repository is a collection of Terraform automation projects applicable to C
 
 ## Which are the projects available?
 The projects can be briefly described as follows:
-1. **..native/multiple-onboarding**: It onboards multiple Public Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
-2. **..native/k8s-workload**: It creates a K8s Cluster on GCP (GKE), create and application and the onboards the cluster in CloudGuard
+1. **./multiple-onboarding**: It onboards multiple Public Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
+2. **./k8s-workload**: It creates a K8s Cluster on GCP (GKE), create and application and the onboards the cluster in CloudGuard
 
 ## Do you want to see more? 
 Check out my Terraform Microsoft Azure repository here: [gbrembati / terraform-azure](https://github.com/gbrembati/terraform-azure)   
