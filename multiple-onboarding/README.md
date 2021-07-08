@@ -11,7 +11,7 @@ First, you need to have a CloudGuard CSPM account, if you don't, you can create 
 ## Get API credentials in your CPSM Portal
 Then you will need to get the API credentials that you will be using with Terraform to onboard the accounts.
 
-![Architectural Design](/zimages/create-cpsm-api.jpg)
+![Architectural Design](/zimages/create-cpsm-serviceaccount.jpg)
 
 Remember to copy these two values, you will need to enter them in the *.tfvars* file later on.
 
