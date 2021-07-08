@@ -40,6 +40,6 @@ To destroy the Terraform-managed infrastructure, run:
 ```hcl
 terraform destroy
 ```
-=======
+
 If you want (or need) to further customize other project details, you can change defaults in the different __*name-variables.tf*__ files.   
 Here you will also able to find the descriptions that explains what each variable is used for.
