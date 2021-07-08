@@ -1,5 +1,5 @@
 # Check Point CPSM Configuration
-This Terraform project is intended to create a Kubernetes environment in GCP and onboards it in the CloudGuard Native Portal.
+This Terraform project is intended to create a Kubernetes environment in GCP and onboards it in the CloudGuard Native Portal.     
 In this case, we use four different Terraform providers: [Google Cloud](https://registry.terraform.io/providers/hashicorp/google/latest), [Kubernetes](https://registry.terraform.io/providers/hashicorp/kubernetes/latest), [Helm](https://registry.terraform.io/providers/hashicorp/helm/latest), [CloudGuard](https://registry.terraform.io/providers/dome9/dome9/latest).    
 
 ## Which are the components created?
