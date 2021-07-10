@@ -5,8 +5,8 @@ hese projects are intended to be used as a template to demonstrate or build a te
 
 ## Which are the projects available?
 The projects can be briefly described as follows:
-1. **./1-multiple-onboarding**: It onboards multiple Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
-2. **./2-k8s-workload**: It creates a K8s Cluster on GCP, create an application and the onboards the cluster in CloudGuard
+1. **./multiple-onboarding**: It onboards multiple Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
+2. **./k8s-workload**: It creates a K8s Cluster on GCP, create an application and the onboards the cluster in CloudGuard
 
 ## Do you want to see more? 
 Check out my Terraform Microsoft Azure repository here: [gbrembati / terraform-azure](https://github.com/gbrembati/terraform-azure)   
