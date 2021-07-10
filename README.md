@@ -1,11 +1,12 @@
 
-# Terraform Projects
-This repository is a collection of Terraform automation projects applicable to Check Point CloudGuard Native Solution, which are intended to be used as a template in a demonstration or to build a test environment.  In the directories, you will find a description of what each project does and if you want (or need) to customize them, you can change defaults in the different __*name-variables.tf*__ files. 
+# CloudGuard Native Terraform Projects
+This repository is a collection of Terraform automation projects that can be used with CloudGuard Native Solution.    
+hese projects are intended to be used as a template to demonstrate or build a test environment. You will find a description of what each project does in the directories, and if you want (or need) to customize them, you can change defaults in the different __*name-variables.tf*__ files. 
 
 ## Which are the projects available?
 The projects can be briefly described as follows:
-1. **./multiple-onboarding**: It onboards multiple Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
-2. **./k8s-workload**: It creates a K8s Cluster on GCP, create an application and the onboards the cluster in CloudGuard
+1. **./1-multiple-onboarding**: It onboards multiple Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
+2. **./2-k8s-workload**: It creates a K8s Cluster on GCP, create an application and the onboards the cluster in CloudGuard
 
 ## Do you want to see more? 
 Check out my Terraform Microsoft Azure repository here: [gbrembati / terraform-azure](https://github.com/gbrembati/terraform-azure)   
