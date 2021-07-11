@@ -1,0 +1,158 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "Role": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "ManagedPolicyArns": [
+          "arn:aws:iam::aws:policy/SecurityAudit",
+          "arn:aws:iam::aws:policy/AmazonInspectorReadOnlyAccess"
+        ],
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": "arn:aws:iam::634729597623:root"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "sts:ExternalId": {
+                    "Ref": "Externalid"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "ReadOnlyPolicy": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "CloudGuardReadOnly",
+        "Roles": [
+          {
+            "Ref": "Role"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "CloudGuardReadOnly",
+              "Action": [
+                "apigateway:GET",
+                "athena:GetQueryExecution",
+                "athena:GetWorkGroup",
+                "cognito-identity:DescribeIdentityPool",
+                "cognito-idp:DescribeUserPool",
+                "cognito-idp:DescribeRiskConfiguration",
+                "dynamodb:ListTagsOfResource",
+                "ec2:SearchTransitGatewayRoutes",
+                "elasticfilesystem:Describe*",
+                "elasticache:ListTagsForResource",
+                "es:ListTags",
+                "eks:DescribeNodegroup",
+                "eks:ListNodegroups",
+                "eks:ListFargateProfiles",
+                "eks:DescribeFargateProfile",
+                "glue:GetConnections",
+                "glue:GetSecurityConfigurations",
+                "kafka:ListClusters",
+                "kinesis:List*",
+                "kinesis:Describe*",
+                "kinesisvideo:Describe*",
+                "kinesisvideo:List*",
+                "logs:Get*",
+                "logs:FilterLogEvents",
+                "logs:ListLogDeliveries",
+                "mq:DescribeBroker",
+                "mq:ListBrokers",
+                "network-firewall:DescribeFirewall",
+                "network-firewall:DescribeLoggingConfiguration",
+                "network-firewall:ListFirewalls",
+                "personalize:DescribeDatasetGroup",
+                "personalize:ListDatasetGroups",
+                "s3:List*",
+                "secretsmanager:DescribeSecret",
+                "sns:ListSubscriptions",
+                "sns:ListTagsForResource",
+                "sns:GetPlatformApplicationAttributes",
+                "sns:ListPlatformApplications",
+                "states:DescribeStateMachine",
+                "transcribe:Get*",
+                "transcribe:List*",
+                "translate:GetTerminology",
+                "waf-regional:ListResourcesForWebACL",
+                "wafv2:ListWebACLs",
+                "wafv2:ListResourcesForWebACL"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Sid": "ElasticbeanstalkConfigurationSettingsPermission",
+              "Action": [
+                "s3:GetObject"
+              ],
+              "Effect": "Allow",
+              "Resource": "arn:aws:s3:::elasticbeanstalk-env-resources-??*?/*"
+            }
+          ]
+        }
+      }
+    },
+    "CloudGuardReadWrite": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "Role"
+          }
+        ],
+        "PolicyName": "CloudGuardReadWrite",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "CloudGuardReadWrite",
+              "Action": [
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateSecurityGroup",
+                "ec2:DeleteSecurityGroup",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:CreateTags",
+                "ec2:DeleteTags"
+              ],
+              "Effect": "Allow",
+              "Resource": "*"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Parameters": {
+    "Externalid": {
+      "Type": "String",
+      "Description": "Enter Dome9 External ID"
+    }
+  },
+  "Outputs": {
+    "RoleARNID": {
+      "Description": "Your Role ARN ID",
+      "Value": {
+        "Fn::GetAtt": [
+          "Role",
+          "Arn"
+        ]
+      }
+    }
+  }
+}
