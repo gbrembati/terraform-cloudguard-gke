@@ -10,7 +10,7 @@ As first you will need to have a CloudGuard CSPM account, if you dont have it, y
 3. Create an account in [United States Region](https://secure.dome9.com/v2/register/invite)
 
 ## Prerequisite
-You would need to give as parameter the External ID, that can be obtained here in a new onboarding here:
+You would need to give as parameter the External ID, that can be obtained during the onboarding wizard:
 ![AWS External ID](/zimages/aws-external-id.jpg)
 
 ## How to launch the template
