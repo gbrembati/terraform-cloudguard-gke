@@ -1,7 +1,7 @@
 # Check Point AWS CloudFormation Onboarding
 This Terraform project is intended to be used to onboard an AWS Public Cloud Account in CloudGuard CSPM.    
-In this folder you can find the CloudFormation Templates JSON files, and the direct link to launch them in your system.
-The IAM Policies created are the public Check Point Policies [dome9 / policies](https://github.com/dome9/policies/tree/master/AWS)
+In this folder you can find the CloudFormation Templates JSON files, and the direct link to launch them in your system.     
+The IAM Policies that will be created are the public Check Point Policies [dome9 / policies](https://github.com/dome9/policies/tree/master/AWS)
  
 ## How to start?
 As first you will need to have a CloudGuard CSPM account, if you dont have it, you can create one with this links:
