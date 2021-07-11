@@ -10,7 +10,7 @@ As first you will need to have a CloudGuard CSPM account, if you dont have it, y
 3. Create an account in [United States Region](https://secure.dome9.com/v2/register/invite)
 
 ## How to launch the template
-Either copy the JSON file and then uploaded to a newly created stack or launch the CloudFormation Templates directly.
+Either copy the JSON file and then uploaded to a newly created stack or launch the CloudFormation Templates directly.     
 These are the link to directly create all that is needed in your AWS Account:
 1. Template with Read-Only Permission: [Launch R/O Stack](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://s3-cloudguard-onboarding.s3.eu-west-1.amazonaws.com/stack/cft-readonly.json)
 2. Template with Read-Write Permission: [Launch R/W Stack](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://s3-cloudguard-onboarding.s3.eu-west-1.amazonaws.com/stack/cft-readwrite.json)
