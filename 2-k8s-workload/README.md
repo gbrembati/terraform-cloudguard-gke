@@ -27,10 +27,12 @@ Remember to copy these two values! You will need to enter them in the *.tfvars* 
 
 ## Get the Key to access your Google Cloud Project
 You would need to create an access to your GCP Project that Terraform will use to access your environment.    
-First you would need to create a Service Account with the following steps:    
+First you would need to create a Service Account with the following steps:     
+
 ![GCP Service Account](/zimages/create-gcp-serviceaccount.jpg)
 
-Once you have created the Service account you would need to create a JSON Key and put it in the project folder:    
+Once you have created the Service account you would need to create a JSON Key and put it in the project folder:     
+
 ![GCP SA Key](/zimages/create-gcp-key.jpg)
 
 ## How to use it
