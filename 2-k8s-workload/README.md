@@ -1,6 +1,7 @@
 # Check Point CPSM Configuration
 This Terraform project is intended to create a Kubernetes environment in GCP and onboards it in the CloudGuard Native Portal.     
-In this case, we use four different Terraform providers: [Google Cloud](https://registry.terraform.io/providers/hashicorp/google/latest), [Kubernetes](https://registry.terraform.io/providers/hashicorp/kubernetes/latest), [Helm](https://registry.terraform.io/providers/hashicorp/helm/latest), [CloudGuard](https://registry.terraform.io/providers/dome9/dome9/latest). As per my deployments (made in London), this project creates all of the following in about __10 minutes__.    
+In this case, we use four different Terraform providers: [Google Cloud](https://registry.terraform.io/providers/hashicorp/google/latest), [Kubernetes](https://registry.terraform.io/providers/hashicorp/kubernetes/latest), [Helm](https://registry.terraform.io/providers/hashicorp/helm/latest), [CloudGuard](https://registry.terraform.io/providers/dome9/dome9/latest).     
+As per my deployments (made in London), this project creates all of the following in about __10 minutes__.    
 
 ## Which are the components created?
 The project creates the following resources and combines them:
@@ -31,7 +32,7 @@ First you would need to create a Service Account with the following steps:
 
 ![GCP Service Account](/zimages/create-gcp-serviceaccount.jpg)
 
-Once you have created the Service account you would need to create a JSON Key and put it in the project folder:     
+Once you have created the Service account you would need to create a JSON Key and put it in this project folder:     
 
 ![GCP SA Key](/zimages/create-gcp-key.jpg)
 
