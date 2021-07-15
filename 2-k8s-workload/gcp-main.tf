@@ -26,8 +26,8 @@ resource "google_container_node_pool" "gke-node-pool" {
   location   = google_container_cluster.gke-cluster.location
   cluster    = google_container_cluster.gke-cluster.name
   
-  node_count = 2
-  node_locations = ["${var.gcp-region}-a","${var.gcp-region}-b"]
+  node_count = 1
+  node_locations = ["${var.gcp-region}-a","${var.gcp-region}-b","${var.gcp-region}-c"]
 
   node_config {
     preemptible  = true
