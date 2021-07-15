@@ -12,3 +12,7 @@ variable "gcp-cluster-name" {
     type = string
     default = "gke-terraform"
 }
+variable "gcp-key-name" {
+    description = "Choose the name of the cluster"
+    type = string
+}

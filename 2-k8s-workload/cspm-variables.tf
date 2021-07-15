@@ -19,3 +19,8 @@ variable "cspm-admin-mail" {
     sensitive = true
     type = string
 }
+variable "cspm-residency" {
+    description = "Where is your CSPM platform instanced?"
+    type = string
+    default = "usea1"
+}
