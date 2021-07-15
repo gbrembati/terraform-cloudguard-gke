@@ -51,6 +51,5 @@ cspm-admin-mail  = "xxxxxxxxxxxxxx"
 # Select your CSPM residency: usea1 [default], euwe1, apso1
 cspm-residency   = "usea1"
 ```
-And you are then adding under the project directory a JSON GCP Key with the name of __<key-name>.json__ to access your GCP Project.     
 If you want (or need) to further customize other project details, you can change defaults in the different __*name-variables.tf*__ files.
 Here you will also be able to find the descriptions that explain what each variable is used for.
