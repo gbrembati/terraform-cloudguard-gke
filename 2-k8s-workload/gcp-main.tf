@@ -27,8 +27,6 @@ resource "google_container_node_pool" "gke-node-pool" {
   cluster    = google_container_cluster.gke-cluster.name
   
   node_count = 1
-  node_locations = ["${var.gcp-region}-a","${var.gcp-region}-b","${var.gcp-region}-c"]
-
   node_config {
     preemptible  = true
     machine_type = "n1-standard-2"
