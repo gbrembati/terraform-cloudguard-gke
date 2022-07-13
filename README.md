@@ -1,46 +1,58 @@
+# Check Point CPSM Configuration
+This Terraform project is intended to create a Kubernetes environment in GCP and onboards it in the CloudGuard Native Portal.     
+In this case, we use four different Terraform providers: [Google Cloud](https://registry.terraform.io/providers/hashicorp/google/latest), [Kubernetes](https://registry.terraform.io/providers/hashicorp/kubernetes/latest), [Helm](https://registry.terraform.io/providers/hashicorp/helm/latest), [CloudGuard](https://registry.terraform.io/providers/dome9/dome9/latest).     
+As per my deployments (made in London), this project creates all of the following in about __10 minutes__.    
 
-# CloudGuard Native Terraform Projects
-This repository is a collection of Terraform automation projects that can be used with CloudGuard Native Solution.    
-hese projects are intended to be used as a template to demonstrate or build a test environment. You will find a description of what each project does in the directories, and if you want (or need) to customize them, you can change defaults in the different __*name-variables.tf*__ files. 
+## Which are the components created?
+The project creates the following resources and combines them:
+1. **GCP Networks**: it connects to GCP and create a VPC with a subnet
+2. **GCP Kubernetes Cluster**: it creates a GKE cluster in the environment
+3. **Juice Shop Deployment**: it deploys a Juice Shop test application
+4. **Cluster Onboarding**: it creates the environment in the CloudGuard Portal
+5. **Notification**: it creates a notification to send the findings via mail
+6. **Continuous Compliance Policy**: it creates a continuous policy with the Kubernetes Best Practice Ruleset
+7. **Create the Check Point components**: it creates all the components needed in the cluster using a Helm Chart
 
-## Which are the projects available?
-The projects can be briefly described as follows:
-1. **./multiple-onboarding**: It onboards multiple Cloud accounts (Azure/AWS/GCP) and K8s Clusters in one-shot
-2. **./k8s-workload**: It creates a K8s Cluster on GCP, create an application and the onboards the cluster in CloudGuard
+## How to start?
+First, you need to have a CloudGuard CSPM account, and if you don't, you can create one with these links:
+1. Create an account in [Europe Region](https://secure.eu1.dome9.com/v2/register/invite)
+2. Create an account in [Asia Pacific Region](https://secure.ap1.dome9.com/v2/register/invite)
+3. Create an account in [United States Region](https://secure.dome9.com/v2/register/invite)
 
-## Do you want to see more? 
-Check out my Terraform Microsoft Azure repository here: [gbrembati / terraform-azure](https://github.com/gbrembati/terraform-azure)   
-Check out my Terraform Amazon Web Services repository here: [gbrembati / terraform-aws](https://github.com/gbrembati/terraform-aws)   
-Check out my Terraform Google Cloud Platform repository here: [gbrembati / terraform-gcp](https://github.com/gbrembati/terraform-gcp)    
-   
-Check the Check Point official CloudGuard CSPM repository here: [dome9 / terraform-provider-dome9 / examples](https://github.com/dome9/terraform-provider-dome9/tree/master/examples)
+## Get API credentials in your CPSM Portal
+Then you will need to get the API credentials that you will be using with Terraform to onboard the accounts.
 
+![CSPM Service Account](/zimages/create-cpsm-serviceaccount.jpg)
 
-## How do you use these projects?
-The first thing that you need to do is download this repository, either via "*git clone*" or "*download as ZIP*".  
-Choose which are projects that you want to use, and in each directory change the relative __*terraform.tfvars*__ file.   
-Once you have done the above, simply go inside the directory of a single project and run these terraform commands.
+Remember to copy these two values! You will need to enter them in the *.tfvars* file later on.
 
-##
-To prepare the current working directory (and install the required providers) run :
+## Get the Key to access your Google Cloud Project
+You would need to create an access to your GCP Project that Terraform will use to access your environment.    
+First you would need to create a Service Account with the following steps:     
+
+![GCP Service Account](/zimages/create-gcp-serviceaccount.jpg)
+
+Once you have created the Service account you would need to create a JSON Key and put it in this project folder:     
+
+![GCP SA Key](/zimages/create-gcp-key.jpg)
+
+## How to use it
+The only thing that you need to do is changing the __*terraform.tfvars*__ file located in this directory.
+
 ```hcl
-terraform init 
+# Set in this file your deployment variables
+gcp-region       = "xxxxxxxxxxxxxx"
+gcp-project      = "xxxxxxxxxxxxxx"
+gcp-cluster-name = "xxxxxxxxxxxxxx"
+gcp-key-name     = "xxxxxxxxxxxxxx.json"
+
+cspm-key-id      = "xxxxxxxxxxxxxx"
+cspm-key-secret  = "xxxxxxxxxxxxxx"
+cspm-org-unit    = "xxxxxxxxxxxxxx"
+cspm-admin-mail  = "xxxxxxxxxxxxxx"
+
+# Select your CSPM residency: usea1 [default], euwe1, apso1
+cspm-residency   = "usea1"
 ```
-##
-To create an execution plan (and see the changes that will be made in your environment) run :
-```hcl
-terraform plan
-``` 
-##
-To apply the changes required to reach the desired state (and create your environment) run :
-```hcl
-terraform apply
-```
-## 
-To destroy the Terraform-managed infrastructure, run:
-```hcl
-terraform destroy
-```
-
 If you want (or need) to further customize other project details, you can change defaults in the different __*name-variables.tf*__ files.
-Here you will also able to find the descriptions that explains what each variable is used for.
+Here you will also be able to find the descriptions that explain what each variable is used for.
